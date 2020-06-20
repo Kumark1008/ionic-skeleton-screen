@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- 
+    Our users list which will be rendered once
+    our users have loaded
+  -->
+	<ion-list *ngIf='users'>
+		<ion-item *ngFor='let user of users'>
+			<h2>{{user.name}}</h2>
+			<h3>Email: {{user.email}}</h3>
+			<p>Company: {{user.company.name}}</p>
+		</ion-item>
+	</ion-list>
+
+  <!--
+  -->
+	<ion-list *ngIf='!users'>
+		<ion-item *ngFor='let fake of fakeUsers' class='fakeItem'>
+			<h2></h2>
+			<h3></h3>
+			<p></p>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
